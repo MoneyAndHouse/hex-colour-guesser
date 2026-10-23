@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hex Colour Guesser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h2>Hex Colour Guesser</h2>
+    </nav>
+    <main>
+        <section class="content">
+            <div id="gameplay-info">
+                <div class="gameplay-info-subcontainer">
+                    <h2>Target</h2>
+                    <div id="target-colour-square" class="square"></div>
+                </div>
+
+                <div class="gameplay-info-subcontainer">
+                    <h2>Guess</h2>
+                    <div id="guessed-colour-square" class="square"></div>
+                </div>
+            </div>
+            <div>
+                <div id="input-section">
+                    <div>
+                        <input id="guess-input" type="text" value="#" maxlength="7" autocomplete="off">
+                        <button id="submit-guess" class="square-button">➜</button>
+                    </div>
+                    <p id="feedback-text">5 guesses left!</p>
+                </div>
+            </div>
+        </section>
+        <section id="guessed-codes-section" class="content">
+            <h2 id="guessed-codes-heading">Guesses</h2>
+        </section>
+        <div class="modal" id="win-modal">
+            <div class="modal-inner">
+                <div class="modal-img-container"><img src="images/right-arrow.png" id="modal-exit-btn" alt="Close"></div>
+                <h3>Great Job</h3>
+                <p id="modal-answer"></p>
+                <p id="modal-result"></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>:3</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

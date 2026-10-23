@@ -1,0 +1,191 @@
+:root {
+    --colour-text: #f3f5ff;
+    --colour-border: #aaa;
+    --colour-background: #f8fafc;
+    --colour-primary: #4d7c0f;
+    --colour-primary-hover: #65a30d;
+
+    --radius-large: 17px;
+    --radius-small: 8px;
+
+    --spacing-xxsmall: 0.5rem;
+    --spacing-xsmall: 0.75rem;
+    --spacing-small: 1rem;
+    --spacing-smed: 1.5rem;
+
+    --max-width: 600px;
+    --max-popup-width: 500px;
+}
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+nav {
+    display: flex;
+    background-color: var(--colour-background);
+    justify-content: center;
+    padding: var(--spacing-xsmall);
+    align-items: center;
+    position: sticky;
+    width: 100%;
+    border: solid var(--colour-border) 1px;
+    top: 0px;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-small) 0;
+    gap: var(--spacing-small);
+    background-image: url(images/white-crumpled-paper-texture-background-design-space-white-tone.jpg);
+    
+    background-size: cover;
+    height: 110vh;
+}
+.content {
+    width: 100%;
+    max-width: var(--max-width);
+    border: solid var(--colour-border) 1px;
+    border-radius: var(--radius-large);
+    padding: var(--spacing-small) var(--spacing-smed);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--colour-background);
+}
+.square {
+    aspect-ratio: 1/1;
+    flex: 1;
+    border-radius: var(--radius-small);
+}
+#target-colour-square {
+    background-color: green;
+}
+#guessed-colour-square {
+    background-color: gray;
+}
+#gameplay-info {
+    display: flex;
+    flex: 1;
+    gap: var(--spacing-small);
+}
+.gameplay-info-subcontainer {
+    flex: 1;
+}
+.gameplay-info-subcontainer h2 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+#input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: var(--spacing-xsmall);
+}
+.square-button {
+    width: 36px;
+    height: 36px;
+    background-color: var(--colour-primary);
+    transition: background-color 0.3s ease;
+    border: none;
+    color: var(--colour-text);
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.square-button:hover {
+    background-color: var(--colour-primary-hover);
+}
+#input-section input {
+    border: solid var(--colour-border) 1px;
+    border-radius: 5px;
+    height: 36px;
+    width: 150px;
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 10px;
+    text-transform: uppercase;
+}
+#input-section div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+#input-section p {
+    font-weight: bold;
+}
+.guessed-code {
+    display: flex;
+    gap: 5px;
+    margin: 4px 0;
+}
+.guessed-code-element {
+    flex: 1;
+    border: solid var(--colour-border) 4px;
+    border-radius: var(--radius-small);
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+.guessed-code-element p {
+    font-size: var(--spacing-smed);
+}
+#guessed-codes-heading {
+    text-align: center;
+    padding-bottom: var(--spacing-xsmall);
+}
+#guessed-codes-section {
+    min-height: 400px;
+}
+footer {
+    display: flex;
+    background-color: var(--colour-background);
+    justify-content: space-around;
+    padding: var(--spacing-small);
+    align-items: center;
+    width: 100%;
+    border: solid var(--colour-border) 1px;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-inner {
+    padding: var(--spacing-small);
+    background-color: var(--colour-background);
+    border-radius: var(--radius-small);
+    width: var(--max-popup-width);
+    text-align: center;
+}
+.modal.open {
+    z-index: 999;
+    opacity: 1;
+}
+#modal-answer {
+    margin: var(--spacing-xsmall) 0;
+}
+.modal img {
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+}
+.modal-img-container {
+    display: flex;
+    justify-content: right;
+}
+#modal-result {
+    white-space: pre-line;
+}
